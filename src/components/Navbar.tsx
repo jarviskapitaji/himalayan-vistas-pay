@@ -1,6 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
-import { Mountain } from "lucide-react";
+import { Mountain, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const Navbar = () => {
   const location = useLocation();
@@ -46,9 +51,34 @@ const Navbar = () => {
           </div>
 
           <div className="md:hidden">
-            <Link to="/donations">
-              <Button variant="secondary">Donate</Button>
-            </Link>
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10">
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-64">
+                <nav className="flex flex-col gap-4 mt-8">
+                  {navLinks.map((link) => (
+                    <Link key={link.path} to={link.path}>
+                      <Button
+                        variant="ghost"
+                        className={`w-full justify-start ${
+                          location.pathname === link.path ? "bg-accent" : ""
+                        }`}
+                      >
+                        {link.name}
+                      </Button>
+                    </Link>
+                  ))}
+                  <Link to="/donations" className="mt-4">
+                    <Button variant="secondary" className="w-full">
+                      Donate Now
+                    </Button>
+                  </Link>
+                </nav>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </div>

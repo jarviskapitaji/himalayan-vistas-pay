@@ -34,12 +34,12 @@ const Home = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/donations">
-              <Button variant="hero" size="lg" className="text-lg px-8">
+              <Button variant="secondary" size="lg" className="text-lg px-8">
                 Donate Now
               </Button>
             </Link>
             <Link to="/work">
-              <Button variant="secondary" size="lg" className="text-lg px-8">
+              <Button variant="default" size="lg" className="text-lg px-8">
                 Our Work
               </Button>
             </Link>
