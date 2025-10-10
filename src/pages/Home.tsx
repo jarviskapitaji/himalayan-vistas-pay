@@ -19,7 +19,7 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/40" />
@@ -89,8 +89,10 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Latest Updates</h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <Card className="overflow-hidden hover:shadow-[var(--shadow-strong)] transition-all duration-300">
-              <img src={educationImage} alt="Education Program" className="w-full h-64 object-cover" />
+            <Card className="overflow-hidden hover:shadow-[var(--shadow-strong)] transition-all duration-300 group">
+              <div className="overflow-hidden">
+                <img src={educationImage} alt="Education Program" className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+              </div>
               <CardHeader>
                 <CardTitle>Education Initiative Expansion</CardTitle>
                 <CardDescription>We've expanded our education program to reach 5 more villages</CardDescription>
@@ -106,8 +108,10 @@ const Home = () => {
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden hover:shadow-[var(--shadow-strong)] transition-all duration-300">
-              <img src={environmentImage} alt="Environmental Work" className="w-full h-64 object-cover" />
+            <Card className="overflow-hidden hover:shadow-[var(--shadow-strong)] transition-all duration-300 group">
+              <div className="overflow-hidden">
+                <img src={environmentImage} alt="Environmental Work" className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+              </div>
               <CardHeader>
                 <CardTitle>Environmental Conservation Drive</CardTitle>
                 <CardDescription>10,000 trees planted this season with community participation</CardDescription>
