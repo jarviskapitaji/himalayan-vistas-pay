@@ -19,27 +19,27 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
+          className="absolute inset-0 bg-cover bg-center parallax-slow"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/40" />
+          <div className="absolute inset-0 bg-[image:var(--gradient-hero)] opacity-90" />
         </div>
         
         <div className="relative z-10 container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 animate-fade-in">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 animate-slide-up drop-shadow-lg">
             Empowering Mountain Communities
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-white/95 mb-8 max-w-3xl mx-auto animate-slide-up drop-shadow-md">
             Building sustainable futures for the people of Himachal Pradesh, Nainital, and the greater Himalayan region
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
             <Link to="/donations">
-              <Button variant="secondary" size="lg" className="text-lg px-8">
+              <Button variant="secondary" size="lg" className="text-lg px-8 animate-glow shadow-lg hover:scale-105 smooth-transition">
                 Donate Now
               </Button>
             </Link>
             <Link to="/work">
-              <Button variant="default" size="lg" className="text-lg px-8">
+              <Button variant="default" size="lg" className="text-lg px-8 shadow-lg hover:scale-105 smooth-transition">
                 Our Work
               </Button>
             </Link>
@@ -66,16 +66,16 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16">
+      <section className="py-16 bg-[image:var(--gradient-leaf)] bg-opacity-5">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
-              <Card key={index} className="text-center transition-all hover:shadow-[var(--shadow-strong)] hover:scale-105 duration-300">
+              <Card key={index} className="text-center card-3d eco-glow bg-card/95 backdrop-blur-sm border-secondary/20">
                 <CardHeader>
-                  <div className="mx-auto mb-2 text-primary">
+                  <div className="mx-auto mb-2 text-secondary animate-float">
                     <stat.icon className="h-12 w-12" />
                   </div>
-                  <CardTitle className="text-3xl font-bold">{stat.value}</CardTitle>
+                  <CardTitle className="text-3xl font-bold bg-gradient-to-br from-secondary to-accent bg-clip-text text-transparent">{stat.value}</CardTitle>
                   <CardDescription className="text-base">{stat.label}</CardDescription>
                 </CardHeader>
               </Card>
@@ -87,14 +87,15 @@ const Home = () => {
       {/* Latest Updates */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Latest Updates</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">Latest Updates</h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <Card className="overflow-hidden hover:shadow-[var(--shadow-strong)] transition-all duration-300 group">
-              <div className="overflow-hidden">
-                <img src={educationImage} alt="Education Program" className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+            <Card className="overflow-hidden card-3d eco-glow group border-secondary/20 bg-card/95 backdrop-blur-sm">
+              <div className="overflow-hidden relative">
+                <img src={educationImage} alt="Education Program" className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1" />
+                <div className="absolute inset-0 bg-gradient-to-t from-secondary/20 to-transparent opacity-0 group-hover:opacity-100 smooth-transition" />
               </div>
               <CardHeader>
-                <CardTitle>Education Initiative Expansion</CardTitle>
+                <CardTitle className="group-hover:text-secondary smooth-transition">Education Initiative Expansion</CardTitle>
                 <CardDescription>We've expanded our education program to reach 5 more villages</CardDescription>
               </CardHeader>
               <CardContent>
@@ -103,17 +104,18 @@ const Home = () => {
                   quality education resources and opportunities.
                 </p>
                 <Link to="/work">
-                  <Button variant="outline">Learn More</Button>
+                  <Button variant="outline" className="hover:bg-secondary hover:text-white hover:border-secondary smooth-transition">Learn More</Button>
                 </Link>
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden hover:shadow-[var(--shadow-strong)] transition-all duration-300 group">
-              <div className="overflow-hidden">
-                <img src={environmentImage} alt="Environmental Work" className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+            <Card className="overflow-hidden card-3d eco-glow group border-secondary/20 bg-card/95 backdrop-blur-sm">
+              <div className="overflow-hidden relative">
+                <img src={environmentImage} alt="Environmental Work" className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1" />
+                <div className="absolute inset-0 bg-gradient-to-t from-secondary/20 to-transparent opacity-0 group-hover:opacity-100 smooth-transition" />
               </div>
               <CardHeader>
-                <CardTitle>Environmental Conservation Drive</CardTitle>
+                <CardTitle className="group-hover:text-secondary smooth-transition">Environmental Conservation Drive</CardTitle>
                 <CardDescription>10,000 trees planted this season with community participation</CardDescription>
               </CardHeader>
               <CardContent>
@@ -122,7 +124,7 @@ const Home = () => {
                   community members in sustainable environmental practices.
                 </p>
                 <Link to="/work">
-                  <Button variant="outline">Learn More</Button>
+                  <Button variant="outline" className="hover:bg-secondary hover:text-white hover:border-secondary smooth-transition">Learn More</Button>
                 </Link>
               </CardContent>
             </Card>
@@ -131,16 +133,20 @@ const Home = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-[image:var(--gradient-hero)]">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+      <section className="py-20 bg-[image:var(--gradient-hero)] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-10 left-10 w-32 h-32 bg-secondary/30 rounded-full blur-3xl animate-float" />
+          <div className="absolute bottom-10 right-10 w-40 h-40 bg-accent/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
+        </div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 drop-shadow-lg">
             Join Us in Making a Difference
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-white/95 mb-8 max-w-2xl mx-auto drop-shadow-md">
             Your contribution can help us continue our mission to empower mountain communities and create sustainable futures.
           </p>
           <Link to="/donations">
-            <Button variant="secondary" size="lg" className="text-lg px-8">
+            <Button variant="secondary" size="lg" className="text-lg px-8 animate-glow shadow-2xl hover:scale-110 bounce-transition">
               Make a Donation
             </Button>
           </Link>
