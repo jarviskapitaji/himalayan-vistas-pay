@@ -66,16 +66,16 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-[image:var(--gradient-leaf)] bg-opacity-5">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
-              <Card key={index} className="text-center card-3d eco-glow bg-card/95 backdrop-blur-sm border-secondary/20">
+              <Card key={index} className="text-center card-3d eco-glow bg-card/95 backdrop-blur-sm">
                 <CardHeader>
-                  <div className="mx-auto mb-2 text-secondary animate-float">
+                  <div className="mx-auto mb-2 text-primary animate-float">
                     <stat.icon className="h-12 w-12" />
                   </div>
-                  <CardTitle className="text-3xl font-bold bg-gradient-to-br from-secondary to-accent bg-clip-text text-transparent">{stat.value}</CardTitle>
+                  <CardTitle className="text-3xl font-bold">{stat.value}</CardTitle>
                   <CardDescription className="text-base">{stat.label}</CardDescription>
                 </CardHeader>
               </Card>
@@ -87,15 +87,15 @@ const Home = () => {
       {/* Latest Updates */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">Latest Updates</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Latest Updates</h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <Card className="overflow-hidden card-3d eco-glow group border-secondary/20 bg-card/95 backdrop-blur-sm">
+            <Card className="overflow-hidden card-3d eco-glow group bg-card/95 backdrop-blur-sm">
               <div className="overflow-hidden relative">
                 <img src={educationImage} alt="Education Program" className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1" />
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary/20 to-transparent opacity-0 group-hover:opacity-100 smooth-transition" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 smooth-transition" />
               </div>
               <CardHeader>
-                <CardTitle className="group-hover:text-secondary smooth-transition">Education Initiative Expansion</CardTitle>
+                <CardTitle className="group-hover:text-primary smooth-transition">Education Initiative Expansion</CardTitle>
                 <CardDescription>We've expanded our education program to reach 5 more villages</CardDescription>
               </CardHeader>
               <CardContent>
@@ -104,18 +104,18 @@ const Home = () => {
                   quality education resources and opportunities.
                 </p>
                 <Link to="/work">
-                  <Button variant="outline" className="hover:bg-secondary hover:text-white hover:border-secondary smooth-transition">Learn More</Button>
+                  <Button variant="outline" className="hover:bg-primary hover:text-white hover:border-primary smooth-transition">Learn More</Button>
                 </Link>
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden card-3d eco-glow group border-secondary/20 bg-card/95 backdrop-blur-sm">
+            <Card className="overflow-hidden card-3d eco-glow group bg-card/95 backdrop-blur-sm">
               <div className="overflow-hidden relative">
                 <img src={environmentImage} alt="Environmental Work" className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1" />
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary/20 to-transparent opacity-0 group-hover:opacity-100 smooth-transition" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 smooth-transition" />
               </div>
               <CardHeader>
-                <CardTitle className="group-hover:text-secondary smooth-transition">Environmental Conservation Drive</CardTitle>
+                <CardTitle className="group-hover:text-primary smooth-transition">Environmental Conservation Drive</CardTitle>
                 <CardDescription>10,000 trees planted this season with community participation</CardDescription>
               </CardHeader>
               <CardContent>
@@ -124,7 +124,7 @@ const Home = () => {
                   community members in sustainable environmental practices.
                 </p>
                 <Link to="/work">
-                  <Button variant="outline" className="hover:bg-secondary hover:text-white hover:border-secondary smooth-transition">Learn More</Button>
+                  <Button variant="outline" className="hover:bg-primary hover:text-white hover:border-primary smooth-transition">Learn More</Button>
                 </Link>
               </CardContent>
             </Card>
