@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
-import { Mountain, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 import {
   Sheet,
   SheetContent,
@@ -23,7 +24,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 transition-transform hover:scale-105 duration-300">
-            <Mountain className="h-10 w-10" />
+            <img src={logo} alt="Yooo Pahad Foundation Logo" className="h-16 w-16 object-contain" />
             <div>
               <h1 className="text-2xl font-bold">YOOO Pahad Foundation</h1>
               <p className="text-xs text-primary-foreground/80">Empowering Mountain Communities</p>
