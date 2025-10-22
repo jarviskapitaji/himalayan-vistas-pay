@@ -4,6 +4,11 @@ import { useState } from "react";
 import independenceday from "@/assets/15aug.jpg";
 import blood from "@/assets/blooddonation.jpg";
 import janmastmi from "@/assets/jamastmi.jpg";
+import garba from "@/assets/garba.jpg";
+import gandhi from "@/assets/2oct.jpg";
+import earth from "@/assets/earthday.jpg";
+
+
 
 const Work = () => {
   const [youtubeLinks] = useState([
@@ -27,7 +32,7 @@ const Work = () => {
       icon: TreePine,
       title: "Blood Donation (Rakt Daan)",
       description: "Donated blood to the bank increasing the availabilty of blood for needy ones ",
-      impact: "Made blood available for the needy ones ",
+      impact: "BD Pandey Jila Chikitsalya Nainital",
       image: blood
     },
     {
@@ -38,23 +43,26 @@ const Work = () => {
       image: janmastmi
     },
     {
-      icon: Users,
-      title: "Women's Empowerment",
-      description: "Skill development programs, self-help groups, and micro-enterprise support for women.",
-      impact: "200+ women entrepreneurs supported"
+      icon: Heart,
+      title: "Garba Night ",
+      description: "Celebrated by playing local folk dance with sticks called garba with local people of nainital and promoted brotherhood with eachother",
+      impact: "Community Building Celebrated the festival with people ",
+      image: garba
     },
     {
-      icon: Lightbulb,
-      title: "Sustainable Livelihoods",
-      description: "Vocational training, organic farming support, and eco-tourism development.",
-      impact: "50+ families with new income sources"
+      icon: Heart,
+      title: "Gandhi Jayanti & Lal Bahadur Shastri Jyanti ",
+      description: "Celebrated the birthday of Mahatma gandhi and lal bahadur shastri by lighting the lamp under the photo",
+      impact: "Community Building Celebrated the festival with people ",
+      image: gandhi
     },
     {
-      icon: Shield,
-      title: "Disaster Preparedness",
-      description: "Community training for natural disaster response and infrastructure development.",
-      impact: "25 communities trained"
-    }
+      icon: Heart,
+      title: "Earth Day ",
+      description: "Celebrated by planting trees with local people promoting the concerns and its benifits to eachother",
+      impact: "Community Building  ",
+      image: earth
+    },
   ];
 
   const upcomingInitiatives = [
@@ -215,15 +223,15 @@ const Work = () => {
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               <div className="text-center card-3d eco-glow p-6 rounded-lg bg-card shadow-[var(--shadow-soft)]">
-                <div className="text-5xl font-bold text-primary mb-2">25+</div>
+                <div className="text-5xl font-bold text-primary mb-2">10+</div>
                 <p className="text-muted-foreground">Communities Served</p>
               </div>
               <div className="text-center card-3d eco-glow p-6 rounded-lg bg-card shadow-[var(--shadow-soft)]">
-                <div className="text-5xl font-bold text-primary mb-2">1000+</div>
+                <div className="text-5xl font-bold text-primary mb-2">100+</div>
                 <p className="text-muted-foreground">Lives Impacted</p>
               </div>
               <div className="text-center card-3d eco-glow p-6 rounded-lg bg-card shadow-[var(--shadow-soft)]">
-                <div className="text-5xl font-bold text-primary mb-2">100+</div>
+                <div className="text-5xl font-bold text-primary mb-2">15+</div>
                 <p className="text-muted-foreground">Active Volunteers</p>
               </div>
             </div>
