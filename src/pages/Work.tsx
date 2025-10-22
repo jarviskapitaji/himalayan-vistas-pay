@@ -1,8 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { GraduationCap, TreePine, Heart, Users, Lightbulb, Shield, Sparkles, Sprout, TrendingUp, Globe, Calendar, Youtube } from "lucide-react";
 import { useState } from "react";
-import educationImage from "@/assets/education-program.jpg";
-import environmentImage from "@/assets/environment-work.jpg";
+import independenceday from "@/assets/15aug.jpg";
+import blood from "@/assets/blooddonation.jpg";
 import janmastmi from "@/assets/jamastmi.jpg";
 
 const Work = () => {
@@ -18,17 +18,17 @@ const Work = () => {
   const programs = [
     {
       icon: GraduationCap,
-      title: "Education Programs",
-      description: "Providing quality education resources, scholarships, and learning materials to children in mountain communities.",
-      impact: "500+ students supported annually",
-      image: educationImage
+      title: "Independence Day",
+      description: "Celebrating our independence with our dear children creating awareness of the sacrifices of our freedom fighters !",
+      impact: "Created awareness of sacrifices of our freedom fighters amongst our new generation",
+      image: independenceday
     },
     {
       icon: TreePine,
-      title: "Environmental Conservation",
-      description: "Reforestation drives, sustainable farming practices, and waste management initiatives.",
-      impact: "10,000+ trees planted",
-      image: environmentImage
+      title: "Blood Donation (Rakt Daan)",
+      description: "Donated blood to the bank increasing the availabilty of blood for needy ones ",
+      impact: "Made blood available for the needy ones ",
+      image: blood
     },
     {
       icon: Heart,
@@ -154,10 +154,10 @@ const Work = () => {
         </div>
       </section>
 
-      {/* Current Programs Grid */}
+      {/* Recent Programs Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Current Programs</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center">Our Recent Programs</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {programs.map((program, index) => (
               <Card key={index} className="hover:shadow-[var(--shadow-strong)] card-3d eco-glow smooth-transition border-primary/20">
