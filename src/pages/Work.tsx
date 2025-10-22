@@ -3,7 +3,7 @@ import { GraduationCap, TreePine, Heart, Users, Lightbulb, Shield, Sparkles, Spr
 import { useState } from "react";
 import educationImage from "@/assets/education-program.jpg";
 import environmentImage from "@/assets/environment-work.jpg";
-import nainitalImage from "@/assets/nainital-lake.jpg";
+import janmastmi from "@/assets/jamastmi.jpg";
 
 const Work = () => {
   const [youtubeLinks] = useState([
@@ -32,10 +32,10 @@ const Work = () => {
     },
     {
       icon: Heart,
-      title: "Healthcare Access",
-      description: "Mobile health clinics, health awareness camps, and support for medical emergencies.",
-      impact: "Monthly health camps in 15 villages",
-      image: nainitalImage
+      title: "Janmastmi Mahotsav 2024",
+      description: "Celebrated janmastmi (The birthday of Lord Krishna ) with local people of nainital and promoted brotherhood with eachother",
+      impact: "Community Building Celebrated the festival with people ",
+      image: janmastmi
     },
     {
       icon: Users,

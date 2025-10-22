@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Heart, Target, Users, Sparkles, Award, Leaf } from "lucide-react";
-import teamSantokhImage from "@/assets/team-santokh.jpg";
-import teamNeerajImage from "@/assets/team-neeraj.jpg";
+import teamSantokhImage from "@/assets/santokh.jpg";
+import teamNeerajImage from "@/assets/neeraj.jpg";
 import teamAaravImage from "@/assets/team-aarav.jpg";
 import teamVipulImage from "@/assets/team-vipul.jpg";
 import teamPankajImage from "@/assets/team-pankaj.jpg";
@@ -128,6 +128,37 @@ const About = () => {
         </div>
       </section>
 
+       {/* Team Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold mb-4 text-center">Our Team</h2>
+          <p className="text-xl text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
+            Meet the passionate individuals driving change in the mountains
+          </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {team.map((member, index) => (
+              <Card key={index} className="hover:shadow-[var(--shadow-strong)] card-3d eco-glow smooth-transition overflow-hidden border-primary/20">
+                <div className="relative h-64 overflow-hidden">
+                  <img 
+                    src={member.image} 
+                    alt={member.name} 
+                    className="w-full h-full object-cover smooth-transition hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 right-4 text-white">
+                    <h3 className="text-xl font-bold mb-1">{member.name}</h3>
+                    <p className="text-sm font-semibold text-secondary">{member.role}</p>
+                  </div>
+                </div>
+                <CardContent className="pt-6">
+                  <p className="text-sm text-muted-foreground leading-relaxed">{member.bio}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Core Values */}
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -199,36 +230,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-4 text-center">Our Team</h2>
-          <p className="text-xl text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
-            Meet the passionate individuals driving change in the mountains
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {team.map((member, index) => (
-              <Card key={index} className="hover:shadow-[var(--shadow-strong)] card-3d eco-glow smooth-transition overflow-hidden border-primary/20">
-                <div className="relative h-64 overflow-hidden">
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="w-full h-full object-cover smooth-transition hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4 text-white">
-                    <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                    <p className="text-sm font-semibold text-secondary">{member.role}</p>
-                  </div>
-                </div>
-                <CardContent className="pt-6">
-                  <p className="text-sm text-muted-foreground leading-relaxed">{member.bio}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+     
 
       {/* Call to Action */}
       <section className="py-16 bg-[image:var(--gradient-hero)] text-white">
