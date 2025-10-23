@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Shield, FileCheck, Heart, Download } from "lucide-react";
-import qrImage from "@/assets/qr-payment.png";
+import qrImage from "@/assets/payment.png";
 
 const Donations = () => {
 
@@ -92,7 +92,7 @@ const Donations = () => {
                 </div>
               </div>
               <p className="text-sm text-muted-foreground mt-4 text-center">
-                After payment, please email your transaction details to <span className="font-medium">donations@yooopahad.org</span>
+                After payment, please email your transaction details to <span className="font-medium">yooopahadfoundation@gmail.com</span>
               </p>
             </CardContent>
           </Card>
@@ -122,7 +122,7 @@ const Donations = () => {
               
               <div className="text-center pt-2">
                 <Button variant="outline" size="lg" asChild>
-                  <a href="/80g-certificate-sample.pdf" download>
+                  <a href="/assets/80G EXEMPTION.pdf" download>
                     <Download className="h-5 w-5 mr-2" />
                     Download Sample 80G Certificate
                   </a>
