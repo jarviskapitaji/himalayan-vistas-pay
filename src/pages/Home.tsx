@@ -2,9 +2,13 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heart, TreePine, GraduationCap, Users } from "lucide-react";
-import heroImage from "@/assets/hero-mountains.jpg";
 import educationImage from "@/assets/education-program.jpg";
 import environmentImage from "@/assets/environment-work.jpg";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import carouselHome from "@/assets/carousel-home.jpg";
+import carouselEarthday from "@/assets/carousel-earthday.jpg";
+import carouselJamastmi from "@/assets/carousel-jamastmi.jpg";
 
 const Home = () => {
   const stats = [
@@ -14,14 +18,40 @@ const Home = () => {
     { icon: Heart, label: "Active Volunteers", value: "100+" },
   ];
 
+  const carouselImages = [
+    carouselHome,
+    carouselEarthday,
+    carouselJamastmi
+  ];
+
   return (
     <main>
       {/* Hero Section */}
       <section className="relative min-h-[700px] flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center parallax-slow"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        >
+        {/* Background Carousel */}
+        <div className="absolute inset-0">
+          <Carousel
+            opts={{
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 4000,
+              }),
+            ]}
+            className="w-full h-full"
+          >
+            <CarouselContent className="h-full">
+              {carouselImages.map((image, index) => (
+                <CarouselItem key={index} className="h-full">
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center transition-all duration-700"
+                    style={{ backgroundImage: `url(${image})` }}
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
           <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/75" />
         </div>
         
