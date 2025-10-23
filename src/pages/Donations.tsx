@@ -4,7 +4,6 @@ import { Shield, FileCheck, Heart, Download } from "lucide-react";
 import qrImage from "@/assets/payment.png";
 
 const Donations = () => {
-
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -122,7 +121,10 @@ const Donations = () => {
               
               <div className="text-center pt-2">
                 <Button variant="outline" size="lg" asChild>
-                  <a href="/assets/80G EXEMPTION.pdf" download>
+                  <a 
+                    href="https://drive.google.com/uc?export=download&id=1uoFE42IzJ7dU2uofeEqEhqIyARHOmsso" 
+                    download="80G EXEMPTION.pdf"
+                  >
                     <Download className="h-5 w-5 mr-2" />
                     Our 80G Exemption Form10AC
                   </a>
