@@ -29,7 +29,7 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative min-h-[700px] flex items-center justify-center overflow-hidden">
         {/* Background Carousel */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 w-full h-full">
           <Carousel
             opts={{
               loop: true,
@@ -41,11 +41,11 @@ const Home = () => {
             ]}
             className="w-full h-full"
           >
-            <CarouselContent className="h-full">
+            <CarouselContent className="h-full -ml-0">
               {carouselImages.map((image, index) => (
-                <CarouselItem key={index} className="h-full">
+                <CarouselItem key={index} className="h-full pl-0 min-h-[700px]">
                   <div 
-                    className="absolute inset-0 bg-cover bg-center transition-all duration-700"
+                    className="w-full h-full bg-cover bg-center transition-all duration-700"
                     style={{ backgroundImage: `url(${image})` }}
                   />
                 </CarouselItem>
