@@ -44,15 +44,19 @@ const Home = () => {
             <CarouselContent className="h-full -ml-0">
               {carouselImages.map((image, index) => (
                 <CarouselItem key={index} className="h-full pl-0 min-h-[700px]">
-                  <div 
-                    className="w-full h-full bg-cover bg-center transition-all duration-700"
-                    style={{ backgroundImage: `url(${image})` }}
-                  />
+                  <div className="relative w-full h-full min-h-[700px]">
+                    <img
+                      src={image}
+                      alt={`Hero slide ${index + 1}`}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      loading="eager"
+                    />
+                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
           </Carousel>
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/75" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/70 via-primary/60 to-primary/50" />
         </div>
         
         <div className="relative z-10 container mx-auto px-4">
