@@ -17,77 +17,162 @@ const Home = () => {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[700px] flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center parallax-slow"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          <div className="absolute inset-0 bg-[image:var(--gradient-hero)] opacity-90" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/75" />
         </div>
         
-        <div className="relative z-10 container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 animate-slide-up drop-shadow-lg">
-            Empowering Mountain Communities
-          </h1>
-          <p className="text-xl md:text-2xl text-white/95 mb-8 max-w-3xl mx-auto animate-slide-up drop-shadow-md">
-            Building sustainable futures for the people of Himachal Pradesh, Nainital, and the greater Himalayan region
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
-            <Link to="/donations">
-              <Button variant="secondary" size="lg" className="text-lg px-8 animate-glow shadow-lg hover:scale-105 smooth-transition">
-                Donate Now
-              </Button>
-            </Link>
-            <Link to="/work">
-              <Button variant="default" size="lg" className="text-lg px-8 shadow-lg hover:scale-105 smooth-transition">
-                Our Work
-              </Button>
-            </Link>
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="max-w-2xl">
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-slide-up leading-tight">
+              WE HELP PEOPLE<br />AROUND THE HILLS
+            </h1>
+            <p className="text-lg md:text-xl text-white/95 mb-8 animate-slide-up max-w-xl leading-relaxed">
+              We help thousands of children to get their education. Now we need your help to continue this mission.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 animate-slide-up">
+              <Link to="/donations">
+                <Button variant="secondary" size="lg" className="text-lg px-10 py-6 animate-glow shadow-2xl hover:scale-105 smooth-transition font-semibold">
+                  DONATE NOW →
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Quick Actions Sidebar */}
+        <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-4 animate-slide-left">
+          <Link to="/work">
+            <div className="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-xl hover:shadow-2xl smooth-transition hover:scale-105 cursor-pointer group">
+              <Users className="h-8 w-8 text-primary mb-2 group-hover:scale-110 smooth-transition" />
+              <h3 className="font-bold text-sm mb-1">WE HELP PEOPLE</h3>
+              <p className="text-xs text-muted-foreground">What our team has done</p>
+            </div>
+          </Link>
+          <Link to="/about">
+            <div className="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-xl hover:shadow-2xl smooth-transition hover:scale-105 cursor-pointer group">
+              <Heart className="h-8 w-8 text-primary mb-2 group-hover:scale-110 smooth-transition" />
+              <h3 className="font-bold text-sm mb-1">BECOME A VOLUNTEER</h3>
+              <p className="text-xs text-muted-foreground">Join our mission</p>
+            </div>
+          </Link>
+          <Link to="/donations">
+            <div className="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-xl hover:shadow-2xl smooth-transition hover:scale-105 cursor-pointer group">
+              <GraduationCap className="h-8 w-8 text-primary mb-2 group-hover:scale-110 smooth-transition" />
+              <h3 className="font-bold text-sm mb-1">DONATE NOW</h3>
+              <p className="text-xs text-muted-foreground">We spend wisely for them</p>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      {/* Quick Action Cards */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <Card className="text-center p-8 card-3d eco-glow hover:shadow-2xl smooth-transition group border-primary/20">
+              <Heart className="h-16 w-16 text-primary mx-auto mb-4 group-hover:scale-110 smooth-transition" />
+              <CardTitle className="text-2xl mb-3">GIVE DONATION</CardTitle>
+              <CardDescription className="text-base mb-6">
+                With your help, we'll be able to go beyond the mountains and reach more children in need.
+              </CardDescription>
+              <Link to="/donations">
+                <Button variant="outline" className="group-hover:bg-primary group-hover:text-white smooth-transition">
+                  Learn More →
+                </Button>
+              </Link>
+            </Card>
+
+            <Card className="text-center p-8 card-3d eco-glow hover:shadow-2xl smooth-transition group border-primary/20">
+              <Users className="h-16 w-16 text-primary mx-auto mb-4 group-hover:scale-110 smooth-transition" />
+              <CardTitle className="text-2xl mb-3">BECOME A VOLUNTEER</CardTitle>
+              <CardDescription className="text-base mb-6">
+                You can help a volunteer, a volunteer can help a village, and a village can change the world.
+              </CardDescription>
+              <Link to="/about">
+                <Button variant="outline" className="group-hover:bg-primary group-hover:text-white smooth-transition">
+                  Join Us →
+                </Button>
+              </Link>
+            </Card>
+
+            <Card className="text-center p-8 card-3d eco-glow hover:shadow-2xl smooth-transition group border-primary/20">
+              <GraduationCap className="h-16 w-16 text-primary mx-auto mb-4 group-hover:scale-110 smooth-transition" />
+              <CardTitle className="text-2xl mb-3">SUPPORT EDUCATION</CardTitle>
+              <CardDescription className="text-base mb-6">
+                You can help by teaching something special for hill children and changing their future.
+              </CardDescription>
+              <Link to="/work">
+                <Button variant="outline" className="group-hover:bg-primary group-hover:text-white smooth-transition">
+                  See Impact →
+                </Button>
+              </Link>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Mission Statement */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Our Mission & Vision</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-              YOOO Pahad Foundation is committed to creating lasting positive change in mountain communities through education, 
-              environmental conservation, and sustainable development initiatives. We believe in empowering local communities 
-              to build their own prosperous and sustainable futures.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Our vision is to see thriving, self-sufficient mountain communities that preserve their rich cultural heritage 
-              while embracing sustainable progress and development.
-            </p>
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">Our Mission & Vision</h2>
+              <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8">
+              <Card className="p-8 card-3d eco-glow border-primary/20">
+                <h3 className="text-2xl font-bold mb-4 text-primary">Our Mission</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  YOOO Pahad Foundation is committed to creating lasting positive change in mountain communities through education, 
+                  environmental conservation, and sustainable development initiatives. We believe in empowering local communities 
+                  to build their own prosperous and sustainable futures.
+                </p>
+              </Card>
+              <Card className="p-8 card-3d eco-glow border-primary/20">
+                <h3 className="text-2xl font-bold mb-4 text-primary">Our Vision</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Our vision is to see thriving, self-sufficient mountain communities that preserve their rich cultural heritage 
+                  while embracing sustainable progress and development. We envision hills where every child has access to quality education 
+                  and every family lives with dignity.
+                </p>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <section className="py-20 bg-primary text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl" />
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl" />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <Card key={index} className="text-center card-3d eco-glow bg-card/95 backdrop-blur-sm">
-                <CardHeader>
-                  <div className="mx-auto mb-2 text-primary animate-float">
-                    <stat.icon className="h-12 w-12" />
-                  </div>
-                  <CardTitle className="text-3xl font-bold">{stat.value}</CardTitle>
-                  <CardDescription className="text-base">{stat.label}</CardDescription>
-                </CardHeader>
-              </Card>
+              <div key={index} className="text-center">
+                <div className="mx-auto mb-4 animate-float">
+                  <stat.icon className="h-14 w-14 mx-auto" />
+                </div>
+                <div className="text-5xl font-bold mb-2">{stat.value}</div>
+                <div className="text-lg text-white/90">{stat.label}</div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Latest Updates */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Latest Updates</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Latest Updates</h2>
+            <div className="w-24 h-1 bg-primary mx-auto"></div>
+          </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <Card className="overflow-hidden card-3d eco-glow group bg-card/95 backdrop-blur-sm">
               <div className="overflow-hidden relative">
@@ -133,23 +218,33 @@ const Home = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-[image:var(--gradient-hero)] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-secondary/30 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-10 right-10 w-40 h-40 bg-accent/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
+      <section className="py-24 bg-gradient-to-r from-primary via-primary/95 to-primary/90 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl animate-float" />
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
         </div>
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 drop-shadow-lg">
-            Join Us in Making a Difference
-          </h2>
-          <p className="text-xl text-white/95 mb-8 max-w-2xl mx-auto drop-shadow-md">
-            Your contribution can help us continue our mission to empower mountain communities and create sustainable futures.
-          </p>
-          <Link to="/donations">
-            <Button variant="secondary" size="lg" className="text-lg px-8 animate-glow shadow-2xl hover:scale-110 bounce-transition">
-              Make a Donation
-            </Button>
-          </Link>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg">
+              Join Us in Making a Difference
+            </h2>
+            <p className="text-xl text-white/95 mb-10 leading-relaxed drop-shadow-md">
+              Your contribution can help us continue our mission to empower mountain communities and create sustainable futures.
+              Every donation, no matter the size, brings hope to families in the hills.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/donations">
+                <Button variant="secondary" size="lg" className="text-lg px-12 py-6 animate-glow shadow-2xl hover:scale-110 bounce-transition font-semibold">
+                  DONATE NOW →
+                </Button>
+              </Link>
+              <Link to="/about">
+                <Button variant="outline" size="lg" className="text-lg px-12 py-6 bg-white hover:bg-white/90 text-primary border-2 border-white shadow-2xl hover:scale-110 bounce-transition font-semibold">
+                  BECOME A VOLUNTEER
+                </Button>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </main>

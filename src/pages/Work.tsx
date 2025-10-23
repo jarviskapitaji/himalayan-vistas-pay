@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { GraduationCap, TreePine, Heart, Users, Lightbulb, Shield, Sparkles, Sprout, TrendingUp, Globe, Calendar, Youtube } from "lucide-react";
+import { GraduationCap, TreePine, Heart, Users, Lightbulb, Shield, Sparkles, Sprout, TrendingUp, Globe, Calendar, Youtube, Droplet, Flag, Milk } from "lucide-react";
 import { useState } from "react";
 import independenceday from "@/assets/15aug.jpg";
 import blood from "@/assets/blooddonation.jpg";
@@ -22,21 +22,21 @@ const Work = () => {
 
   const programs = [
     {
-      icon: GraduationCap,
+      icon: Flag,
       title: "Independence Day",
       description: "Celebrating our independence with our dear children creating awareness of the sacrifices of our freedom fighters !",
       impact: "Created awareness of sacrifices of our freedom fighters amongst our new generation",
       image: independenceday
     },
     {
-      icon: TreePine,
+      icon: Droplet,
       title: "Blood Donation (Rakt Daan)",
       description: "Donated blood to the bank increasing the availabilty of blood for needy ones ",
       impact: "BD Pandey Jila Chikitsalya Nainital",
       image: blood
     },
     {
-      icon: Heart,
+      icon: Milk,
       title: "Janmastmi Mahotsav 2024",
       description: "Celebrated janmastmi (The birthday of Lord Krishna ) with local people of nainital and promoted brotherhood with eachother",
       impact: "Community Building Celebrated the festival with people ",

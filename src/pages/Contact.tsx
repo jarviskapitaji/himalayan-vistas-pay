@@ -57,11 +57,22 @@ const Contact = () => {
                   <div className="flex items-start gap-3">
                     <MapPin className="h-5 w-5 text-primary mt-1" />
                     <div>
-                      <p className="font-medium">Office Address</p>
+                      <p className="font-medium">Nainital Office</p>
                       <p className="text-sm text-muted-foreground">
-                        123 Mountain Road,<br />
-                        Shimla, Himachal Pradesh<br />
-                        171001, India
+                        Stone Le Compound, Tallital<br />
+                        Nainital, Uttarakhand<br />
+                        Pin - 263002
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <MapPin className="h-5 w-5 text-primary mt-1" />
+                    <div>
+                      <p className="font-medium">Haldwani Office</p>
+                      <p className="text-sm text-muted-foreground">
+                        Ecotown Phase 1, Daharia<br />
+                        Haldwani, Uttarakhand
                       </p>
                     </div>
                   </div>
@@ -70,8 +81,9 @@ const Contact = () => {
                     <Phone className="h-5 w-5 text-primary mt-1" />
                     <div>
                       <p className="font-medium">Phone</p>
-                      <p className="text-sm text-muted-foreground">+91 98765 43210</p>
-                      <p className="text-sm text-muted-foreground">+91 98765 43211</p>
+                      <p className="text-sm text-muted-foreground">+91 89419 41877</p>
+                      <p className="text-sm text-muted-foreground">+91 87553 36959</p>
+                      <p className="text-sm text-muted-foreground">+91 81269 00404</p>
                     </div>
                   </div>
                   
