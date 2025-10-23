@@ -124,11 +124,10 @@ const Donations = () => {
                 <Button variant="outline" size="lg" asChild>
                   <a href="/assets/80G EXEMPTION.pdf" download>
                     <Download className="h-5 w-5 mr-2" />
-                    Download Sample 80G Certificate
+                    Our 80G Exemption Form10AC
                   </a>
                 </Button>
                 <p className="text-xs text-muted-foreground mt-3">
-                  Click to download a sample certificate format
                 </p>
               </div>
             </CardContent>

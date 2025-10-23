@@ -65,7 +65,7 @@ const Home = () => {
               WE HELP PEOPLE<br />AROUND THE HILLS
             </h1>
             <p className="text-lg md:text-xl text-white/95 mb-8 animate-slide-up max-w-xl leading-relaxed">
-              We help thousands of children to get their education. Now we need your help to continue this mission.
+              We help hundreds of children to get their education. Now we need your help to continue this mission.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 animate-slide-up">
               <Link to="/donations">
@@ -235,7 +235,7 @@ const Home = () => {
               </div>
               <CardHeader>
                 <CardTitle className="group-hover:text-primary smooth-transition">Environmental Conservation Drive</CardTitle>
-                <CardDescription>10,000 trees planted this season with community participation</CardDescription>
+                <CardDescription>50+ trees planted this season with community participation</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
@@ -272,7 +272,7 @@ const Home = () => {
                   DONATE NOW →
                 </Button>
               </Link>
-              <Link to="/about">
+              <Link to="/contact">
                 <Button variant="outline" size="lg" className="text-lg px-12 py-6 bg-white hover:bg-white/90 text-primary border-2 border-white shadow-2xl hover:scale-110 bounce-transition font-semibold">
                   BECOME A VOLUNTEER
                 </Button>
