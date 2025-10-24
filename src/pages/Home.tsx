@@ -126,7 +126,7 @@ const Home = () => {
               <CardDescription className="text-base mb-6">
                 You can help a volunteer, a volunteer can help a village, and a village can change the world.
               </CardDescription>
-              <Link to="/about">
+              <Link to="/contact">
                 <Button variant="outline" className="group-hover:bg-primary group-hover:text-white smooth-transition">
                   Join Us →
                 </Button>
@@ -139,7 +139,7 @@ const Home = () => {
               <CardDescription className="text-base mb-6">
                 You can help by teaching something special for hill children and changing their future.
               </CardDescription>
-              <Link to="/work">
+              <Link to="/donations">
                 <Button variant="outline" className="group-hover:bg-primary group-hover:text-white smooth-transition">
                   See Impact →
                 </Button>

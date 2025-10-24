@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
-import { Mountain, Instagram, Facebook, Twitter } from "lucide-react";
+import { Instagram, Facebook, Twitter } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground py-12 mt-20">
+    <footer className="bg-primary text-primary-foreground py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <Mountain className="h-8 w-8" />
+              <img src={logo} alt="Yooo Pahad Foundation Logo" className="h-12 w-12 object-contain" />
               <h3 className="text-xl font-bold">YOOO Pahad Foundation</h3>
             </div>
             <p className="text-primary-foreground/80 mb-4">
