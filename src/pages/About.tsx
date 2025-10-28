@@ -1,10 +1,25 @@
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Heart, Target, Users, Sparkles, Award, Leaf } from "lucide-react";
-import teamSantokhImage from "@/assets/santokh.jpg";
 import teamNeerajImage from "@/assets/neeraj.jpg";
+import teamSantokhImage from "@/assets/santokh.jpg";
 import teamAaravImage from "@/assets/team-aarav.jpg";
-import teamVipulImage from "@/assets/team-vipul.jpg";
 import teamPankajImage from "@/assets/team-pankaj.jpg";
+import teamVipulImage from "@/assets/team-vipul.jpg";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Award, Heart, Leaf, Sparkles, Target, Users } from "lucide-react";
+
+//
+// Helper to generate simple SVG avatar data-URIs (initials) for members
+//
+const avatarSvgDataUri = (name: string, bg = "#2f8554") => {
+  const initials = name
+    .split(" ")
+    .filter(Boolean)
+    .map((n) => n[0])
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+  const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='800' height='800'><rect width='100%' height='100%' fill='${bg}'/><text x='50%' y='50%' dy='.08em' text-anchor='middle' font-family='Inter, Roboto, Arial, sans-serif' font-size='320' fill='#fff'>${initials}</text></svg>`;
+  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+};
 
 const About = () => {
   const values = [
@@ -70,7 +85,32 @@ const About = () => {
       role: "Active Member",
       image: teamPankajImage,
       bio: "A committed member driving grassroots initiatives and community engagement, ensuring every voice in the hills is heard and valued."
-    }
+    },
+    {
+      name: "Chetan Mehra",
+      role: "Technical Support Specialist",
+      bio: "Chetan provides the technical backbone for events and projects, contributing expertise while working behind the scenes."
+    },
+
+    // -- added generated avatars for founders / co-founders / roles / active members --
+    { name: "Jitendar Martoliya", role: "Founding Member", image: avatarSvgDataUri("Jitendar Martoliya"), bio: "" },
+    { name: "TBD", role: "Founding Member", image: avatarSvgDataUri("T B D"), bio: "" },
+    { name: "TBD", role: "Founding Member", image: avatarSvgDataUri("T B D"), bio: "" },
+
+    { name: "Arjun Bohara", role: "Co-Founder", image: avatarSvgDataUri("Arjun Bohara"), bio: "" },
+    { name: "Lokesh Bisht", role: "Co-Founder", image: avatarSvgDataUri("Lokesh Bisht"), bio: "" },
+    { name: "Deepak Joshi", role: "Co-Founder", image: avatarSvgDataUri("Deepak Joshi"), bio: "" },
+    { name: "Dinesh Pandey", role: "Co-Founder", image: avatarSvgDataUri("Dinesh Pandey"), bio: "" },
+    { name: "Abhishek Tiwari", role: "Co-Founder", image: avatarSvgDataUri("Abhishek Tiwari"), bio: "" },
+
+    { name: "Deepak Thapa", role: "Head of Photography / Videography", image: avatarSvgDataUri("Deepak Thapa"), bio: "" },
+    { name: "Deepak Bisht", role: "Fund Manager (CEO)", image: avatarSvgDataUri("Deepak Bisht"), bio: "" },
+
+    { name: "Himanshu Bisht", role: "Active Member", image: avatarSvgDataUri("Himanshu Bisht"), bio: "" },
+    { name: "Amit Vidhyarthi", role: "Active Member", image: avatarSvgDataUri("Amit Vidhyarthi"), bio: "" },
+    { name: "Chandar Kant Joshi", role: "Active Member", image: avatarSvgDataUri("Chandar Kant Joshi"), bio: "" },
+    // Pankaj / Vipul / Aarav already exist above; add Manoj
+    { name: "Manoj Kumar", role: "Active Member", image: avatarSvgDataUri("Manoj Kumar"), bio: "" }
   ];
 
   const focusAreas = [
@@ -229,8 +269,6 @@ const About = () => {
           </div>
         </div>
       </section>
-
-     
 
       {/* Call to Action */}
       <section className="py-16 bg-[image:var(--gradient-hero)] text-white">
