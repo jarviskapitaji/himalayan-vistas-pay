@@ -12,10 +12,10 @@ import carouselJamastmi from "@/assets/carousel-jamastmi.jpg";
 
 const Home = () => {
   const stats = [
-    { icon: Users, label: "Communities Served", value: "25+" },
-    { icon: GraduationCap, label: "Students Supported", value: "500+" },
-    { icon: TreePine, label: "Trees Planted", value: "10,000+" },
-    { icon: Heart, label: "Active Volunteers", value: "100+" },
+    { icon: Users, label: "Communities Served", value: "22+" },
+    { icon: GraduationCap, label: "Students Supported", value: "478+" },
+    { icon: TreePine, label: "Trees Planted", value: "8796+" },
+    { icon: Heart, label: "Active Volunteers", value: "82+" },
   ];
 
   const carouselImages = [
