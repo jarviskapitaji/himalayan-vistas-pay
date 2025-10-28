@@ -120,7 +120,37 @@ const About = () => {
       name: "Jitendar Martoliya",
       role: "Founding Member",
       image: jitendraMartoliyaImage,
-      bio: "A founding pillar of Yooo Pahad Foundation, dedicated to building sustainable community initiatives from the ground up."
+      bio: "Jitendra Mathuriya has always stood as a frontline warrior for the preservation of the hill culture and the development of its people. His unwavering motivation lies in keeping the roots of the mountains alive and safeguarding our religious and cultural heritage. He has consistently worked towards social causes, contributing to the education, health, and rural development of children and communities in the hills."
+    },
+    {
+      name: "Arjun Bohara",
+      role: "Founding Member",
+      image: arjunBoharaImage,
+      bio: "Always at the forefront of religious and social initiatives, this individual consistently contributes to creating new employment opportunities and offering suggestions for the welfare of rural communities. Their family is also dedicated to the betterment of Nainital city. Known for their kind-hearted nature, they are a young, compassionate social worker committed to serving society."
+    },
+    {
+      name: "Lokesh Bisht",
+      role: "Founding Member",
+      image: lokeshBishtImage,
+      bio: "Lokesh Bisht has been a backbone in all social and welfare programs, working tirelessly behind the scenes without ever seeking the spotlight. His selfless contributions, with complete dedication of mind, body, and resources, are integral from the pre-event preparations to post-event efforts. His significant role ensures the success of every program he supports."
+    },
+    {
+      name: "Deepak Joshi",
+      role: "Founding Member",
+      image: deepakJoshiImage,
+      bio: "He is, in addition to being a junior engineer, has been consistently providing career counseling and valuable information to the people of the hills, particularly to those who find it difficult to access such guidance. Known for his simple and approachable nature, he has made significant contributions to society through various commendable initiatives. These include participating in cleanliness drives, blood donation awareness campaigns, and religious programs, where he contributes in every possible way."
+    },
+    {
+      name: "Abhishek Tiwari",
+      role: "Founding Member",
+      image: abhishekTiwariImage,
+      bio: "Abhishek Tiwari, while being socially active, has consistently contributed to cultural activities from time to time. Having completed his early education in Nainital and pursued an MSc in Mathematics, he remains dedicated to social work and serving the community. As a former sportsman, his contributions to social welfare initiatives have always been significant."
+    },
+    {
+      name: "Dinesh Pandey",
+      role: "Founding Member",
+      image: dineshPandeyImage,
+      bio: "Dinesh Pande, a former sportsman and a devoted participant in religious activities, is among those who contribute wholeheartedly while staying behind the scenes. As a young entrepreneur, he remains fully dedicated to serving society in every possible way."
     },
     {
       name: "Shiva Bisht",
@@ -142,53 +172,19 @@ const About = () => {
     }
   ];
 
-  // Co-Founders
-  const coFounders = [
-    {
-      name: "Arjun Bohara",
-      role: "Co-Founder",
-      image: arjunBoharaImage,
-      bio: "Co-founder committed to grassroots development and community empowerment through innovative programs."
-    },
-    {
-      name: "Lokesh Bisht",
-      role: "Co-Founder",
-      image: lokeshBishtImage,
-      bio: "A visionary co-founder working to preserve mountain culture while driving modern development."
-    },
-    {
-      name: "Deepak Joshi",
-      role: "Co-Founder",
-      image: deepakJoshiImage,
-      bio: "Co-founder passionate about sustainable tourism and environmental conservation in the hills."
-    },
-    {
-      name: "Dinesh Pandey",
-      role: "Co-Founder",
-      image: dineshPandeyImage,
-      bio: "Dedicated co-founder focusing on youth development and skill-building initiatives."
-    },
-    {
-      name: "Abhishek Tiwari",
-      role: "Co-Founder",
-      image: abhishekTiwariImage,
-      bio: "Co-founder driving educational programs and community awareness campaigns."
-    }
-  ];
-
   // Key Roles
   const keyRoles = [
     {
       name: "Deepak Thapa",
       role: "Head of Photography / Videography",
       image: deepakThapaImage,
-      bio: "Capturing the essence of mountain life through powerful visual storytelling and documentation."
+      bio: "Deepak Thapa is a renowned photographer and videographer from Nainital, Uttarakhand, who has successfully completed numerous major events and projects. His good reputation in society and his willingness to provide every possible assistance set him apart. As an active social worker and a compassionate individual, he consistently supports various social organizations. He is also the owner of Utkarsh Photography, located in Bhimtal."
     },
     {
       name: "Deepak Bisht",
       role: "Fund Manager (CEO)",
       image: deepakBishtFundImage,
-      bio: "Managing resources strategically to maximize impact and ensure sustainable growth of foundation programs."
+      bio: "Deepak Bisht is a highly qualified individual with a remarkably simple and humble nature, deeply connected to the hills and its people. He has always been at the forefront of social initiatives and environmental awareness or conservation campaigns. His significant contributions to promoting yoga reflect his deep knowledge of the practice. From time to time, he educates and motivates children about education, the environment, and their cultural heritage. Deepak consistently supports various social organizations with his wholehearted dedication of mind, body, and resources."
     }
   ];
 
@@ -255,7 +251,7 @@ const About = () => {
     "Shri Krishna Janmashtami Mahotsav - Youth motivation festival",
     "Maa Nanda Sunanda Devi Utsav - Flower showers & charitable donations",
     "Nainital's First Charitable Event - Bhakti-meets-entertainment extravaganza",
-    "Uttarakhand's First Kumaoni Digital Ramleera Performance",
+    "Uttarakhand's First Kumaoni Digital Ramleela Performance",
     "Reverse Migration Efforts - Transforming abandoned farmlands into thriving hubs"
   ];
 
@@ -361,19 +357,11 @@ const About = () => {
             </div>
           </div>
 
-          {/* Co-Founders */}
-          <div className="max-w-6xl mx-auto mb-16">
-            <h3 className="text-3xl font-bold mb-8 text-center text-primary">Co-Founders</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {renderTeamCards(coFounders, coreTeam.length + foundingMembers.length)}
-            </div>
-          </div>
-
           {/* Key Roles */}
           <div className="max-w-6xl mx-auto mb-16">
             <h3 className="text-3xl font-bold mb-8 text-center text-primary">Key Roles</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {renderTeamCards(keyRoles, coreTeam.length + foundingMembers.length + coFounders.length)}
+              {renderTeamCards(keyRoles, coreTeam.length + foundingMembers.length)}
             </div>
           </div>
 
@@ -381,7 +369,7 @@ const About = () => {
           <div className="max-w-6xl mx-auto">
             <h3 className="text-3xl font-bold mb-8 text-center text-primary">Active Members</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {renderTeamCards(activeMembers, coreTeam.length + foundingMembers.length + coFounders.length + keyRoles.length)}
+              {renderTeamCards(activeMembers, coreTeam.length + foundingMembers.length + keyRoles.length)}
             </div>
           </div>
         </div>
