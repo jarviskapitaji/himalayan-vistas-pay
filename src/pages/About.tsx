@@ -104,13 +104,13 @@ const About = () => {
       name: "Deepa Bisht",
       role: "Female Vice President",
       image: deepaBishtImage,
-      bio: "Women vice president Deepa Bisht has been a dedicated and responsible educator and mentor for young children in Uttarakhand for the past 16 years. Currently, she serves as the principal of the junior wing at C.R.S.T. Nainital, where she instills values of team building, confidence, and motivation in young minds, teaching them to become responsible citizens while staying connected to their cultural heritage and roots. Quietly, she contributes to various social initiatives in the community. Deepa consistently supports specially-abled children, both physically and mentally challenged, helping them build confidence and a sense of belonging, preparing them to stand equal in society with love and dignity. Additionally, she educates underprivileged children in personality development, English speaking, confidence building, and grooming, empowering them to thrive."
+      bio: "Women vice president Deepa Bisht has been a dedicated and responsible educator and mentor for young children in Uttarakhand for the past 16 years. Currently, she serves as the principal of the junior wing at C.R.S.T. Nainital, where she instills values of team building, confidence, and motivation in young minds, teaching them to become responsible citizens while staying connected to their cultural heritage and roots. Quietly, she contributes to various social initiatives in the community. Deepa consistently supports specially-abled children, both physically and mentally challenged, helping them build confidence and a sense of belonging, preparing them to stand equal in society with love and dignity. Additionally, she educates underprivileged children in personality development, English speaking, confidence building, and grooming, empowering them to thrive."
     },
     {
       name: "Neeraj Bisht",
       role: "Treasurer",
       image: teamNeerajImage,
-      bio: "Treasurer: Neeraj Bisht, Ph.D. Research Scholar neeraj Bisht is a dynamic young leader whose deep roots in Nainital fuel his passionate commitment to the welfare of the hills and its people. Currently pursuing his Ph.D. in History, Neeraj’s work extends far beyond academia, actively engaging with and conducting research in the fields of tribal communities and Kumaoni ballad and folk songs.His early career was marked by exceptional distinction as an NCC cadet, where his outstanding performance led to participation in national camps and the honor of briefing high-level dignitaries, including Defence Chiefs and the Defence Minister. This experience instilled in him a mature, disciplined approach that he now applies to social work.Neeraj's vision is clear: to ensure the vibrant essence of the mountains and foundational human values remain at the forefront of every initiative. He brings a unique blend of youthful energy, disciplined leadership, and a profound commitment to his community's heritage to his role as Treasurer."
+      bio: "Treasurer: Neeraj Bisht, Ph.D. Research Scholar neeraj Bisht is a dynamic young leader whose deep roots in Nainital fuel his passionate commitment to the welfare of the hills and its people. Currently pursuing his Ph.D. in History, Neeraj's work extends far beyond academia, actively engaging with and conducting research in the fields of tribal communities and Kumaoni ballad and folk songs.His early career was marked by exceptional distinction as an NCC cadet, where his outstanding performance led to participation in national camps and the honor of briefing high-level dignitaries, including Defence Chiefs and the Defence Minister. This experience instilled in him a mature, disciplined approach that he now applies to social work.Neeraj's vision is clear: to ensure the vibrant essence of the mountains and foundational human values remain at the forefront of every initiative. He brings a unique blend of youthful energy, disciplined leadership, and a profound commitment to his community's heritage to his role as Treasurer."
     }
   ];
 
@@ -302,12 +302,32 @@ const About = () => {
 
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="py-20 bg-[image:var(--gradient-hero)] text-white relative overflow-hidden">
+      {/* Hero Section with Video Background */}
+      <section className="py-20 text-white relative overflow-hidden min-h-[500px]">
+        {/* Video Background */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="https://www.pexels.com/download/video/34434156/" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        
+        {/* Dark Overlay for text visibility */}
+        <div className="absolute inset-0 bg-black/50"></div>
+        
+        {/* Pattern Overlay */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE2YzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00em0wIDI0YzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00ek0xMiAxNmMwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNHptMCAyNGMwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-20"></div>
+        
+        {/* Content */}
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-slide-up">About Yooo Pahad Foundation</h1>
-          <p className="text-xl md:text-2xl max-w-4xl mx-auto text-white/90 animate-fade-in">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-slide-up drop-shadow-2xl">
+            About Yooo Pahad Foundation
+          </h1>
+          <p className="text-xl md:text-2xl max-w-4xl mx-auto text-white animate-fade-in drop-shadow-lg">
             Empowering Hills, Hearts, and Humanity
           </p>
         </div>
