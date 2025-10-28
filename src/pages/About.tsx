@@ -22,6 +22,7 @@ import amitVidhyarthiImage from "@/assets/amitvidyarti.jpg";
 import chandarKantJoshiImage from "@/assets/chetan.jpg";
 import manojKumarImage from "@/assets/manojkumar.jpg";
 import vipulBishtImage from "@/assets/vipulbisht.jpg";
+import deeptiBoraImage from "@/assets/deeptibora.jpg";
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Award, Heart, Leaf, Sparkles, Target, Users, ChevronDown, ChevronUp } from "lucide-react";
@@ -79,7 +80,8 @@ const About = () => {
     }
   ];
 
-  const team = [
+  // Core Leadership Team
+  const coreTeam = [
     {
       name: "Dr. Santokh Singh Bisht",
       role: "President",
@@ -109,23 +111,39 @@ const About = () => {
       role: "Treasurer",
       image: teamNeerajImage,
       bio: "Neeraj Bisht is a dynamic young leader whose deep roots in Nainital fuel his passionate commitment to the welfare of the hills and its people. Currently pursuing his Ph.D. in History, Neeraj's work extends far beyond academia, actively engaging with and conducting research in the fields of tribal communities and Kumaoni ballad and folk songs. His early career was marked by exceptional distinction as an NCC cadet, where his outstanding performance led to participation in national camps and the honor of briefing high-level dignitaries, including Defence Chiefs and the Defence Minister. This experience instilled in him a mature, disciplined approach that he now applies to social work. Neeraj's vision is clear: to ensure the vibrant essence of the mountains and foundational human values remain at the forefront of every initiative. He brings a unique blend of youthful energy, disciplined leadership, and a profound commitment to his community's heritage to his role as Treasurer."
-    },
-    {
-      name: "Shiva Bisht",
-      role: "Joint Secretary",
-      image: shivaBishtImage,
-      bio: "Shiva provides the technical backbone for events and projects, contributing expertise while working behind the scenes to ensure seamless execution."
-    },
+    }
+  ];
 
-    // Founding Members
+  // Founding Members
+  const foundingMembers = [
     {
       name: "Jitendar Martoliya",
       role: "Founding Member",
       image: jitendraMartoliyaImage,
       bio: "A founding pillar of Yooo Pahad Foundation, dedicated to building sustainable community initiatives from the ground up."
     },
+    {
+      name: "Shiva Bisht",
+      role: "Joint Secretary (Founding Member)",
+      image: shivaBishtImage,
+      bio: "A young entrepreneur, quietly contributes to the religious and social initiatives of his city, embodying a spirit of selfless service. A former sportsman, he has inspired and connected with numerous young individuals in his community, encouraging them to work together for the betterment of the environment and society. Through his leadership and dedication, Shiva consistently motivates others to actively participate in meaningful causes, fostering positive change and collective responsibility."
+    },
+    {
+      name: "Deepti Bora",
+      role: "Media Relations Manager (Founding Member)",
+      image: deeptiBoraImage,
+      bio: "Deepti Bora is a well-known young woman from Nainital who plays an active role in religious, social, and welfare programs. Alongside her professional pursuits, she is an accomplished journalist who works towards societal improvement and ensures the public's voice reaches the right platforms. Her wholehearted contributions—through mind, body, and resources—are evident in every form of social work she undertakes."
+    },
+    {
+      name: "Chetan Mehra",
+      role: "Technical Support Specialist (Founding Member)",
+      image: chandarKantJoshiImage,
+      bio: "Chetan Mehra serves as the backbone of various programs, preferring to work behind the scenes rather than in the spotlight. His selfless contributions—through mind, body, and resources—are quietly made to every social initiative. Currently, he works for a major multinational company and was recognized as one of the most intelligent students in his city during his academic years. He consistently supports the foundation with technical expertise whenever needed. Chetan believes that the upcoming generation should embrace technology while staying connected to our cultural roots, which form the core of our identity."
+    }
+  ];
 
-    // Co-Founders
+  // Co-Founders
+  const coFounders = [
     {
       name: "Arjun Bohara",
       role: "Co-Founder",
@@ -155,9 +173,11 @@ const About = () => {
       role: "Co-Founder",
       image: abhishekTiwariImage,
       bio: "Co-founder driving educational programs and community awareness campaigns."
-    },
+    }
+  ];
 
-    // Key Roles
+  // Key Roles
+  const keyRoles = [
     {
       name: "Deepak Thapa",
       role: "Head of Photography / Videography",
@@ -169,9 +189,11 @@ const About = () => {
       role: "Fund Manager (CEO)",
       image: deepakBishtFundImage,
       bio: "Managing resources strategically to maximize impact and ensure sustainable growth of foundation programs."
-    },
+    }
+  ];
 
-    // Active Members
+  // Active Members
+  const activeMembers = [
     {
       name: "Himanshu Bisht",
       role: "Active Member",
@@ -233,9 +255,54 @@ const About = () => {
     "Shri Krishna Janmashtami Mahotsav - Youth motivation festival",
     "Maa Nanda Sunanda Devi Utsav - Flower showers & charitable donations",
     "Nainital's First Charitable Event - Bhakti-meets-entertainment extravaganza",
-    "Uttarakhand's First Kumaoni Digital Ramleela Performance",
+    "Uttarakhand's First Kumaoni Digital Ramleera Performance",
     "Reverse Migration Efforts - Transforming abandoned farmlands into thriving hubs"
   ];
+
+  // Helper function to render team cards
+  const renderTeamCards = (members: typeof coreTeam, startIndex: number) => {
+    return members.map((member, index) => {
+      const globalIndex = startIndex + index;
+      return (
+        <Card 
+          key={globalIndex} 
+          className="hover:shadow-[var(--shadow-strong)] card-3d eco-glow smooth-transition overflow-hidden border-primary/20 cursor-pointer"
+          onClick={() => toggleCard(globalIndex)}
+        >
+          <div className="relative h-80 overflow-hidden bg-muted/20">
+            <img 
+              src={member.image} 
+              alt={member.name} 
+              className="w-full h-full object-contain smooth-transition hover:scale-105 p-2"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none"></div>
+            <div className="absolute bottom-4 left-4 right-4 text-white">
+              <h3 className="text-xl font-bold mb-1">{member.name}</h3>
+              <p className="text-sm font-semibold text-secondary">{member.role}</p>
+            </div>
+            <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2">
+              {expandedCard === globalIndex ? (
+                <ChevronUp className="h-5 w-5 text-white" />
+              ) : (
+                <ChevronDown className="h-5 w-5 text-white" />
+              )}
+            </div>
+          </div>
+          
+          {/* Expandable Bio Section */}
+          <div 
+            className={`overflow-hidden smooth-transition ${
+              expandedCard === globalIndex ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+            }`}
+          >
+            <CardContent className="pt-6 pb-6">
+              <p className="text-sm text-muted-foreground leading-relaxed">{member.bio}</p>
+            </CardContent>
+          </div>
+        </Card>
+      );
+    });
+  };
 
   return (
     <main className="min-h-screen">
@@ -278,45 +345,44 @@ const About = () => {
           <p className="text-xl text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
             Meet the passionate individuals driving change in the mountains
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {team.map((member, index) => (
-              <Card 
-                key={index} 
-                className="hover:shadow-[var(--shadow-strong)] card-3d eco-glow smooth-transition overflow-hidden border-primary/20 cursor-pointer"
-                onClick={() => toggleCard(index)}
-              >
-                <div className="relative h-80 overflow-hidden bg-muted/20">
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="w-full h-full object-contain smooth-transition hover:scale-105 p-2"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none"></div>
-                  <div className="absolute bottom-4 left-4 right-4 text-white">
-                    <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                    <p className="text-sm font-semibold text-secondary">{member.role}</p>
-                  </div>
-                  <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2">
-                    {expandedCard === index ? (
-                      <ChevronUp className="h-5 w-5 text-white" />
-                    ) : (
-                      <ChevronDown className="h-5 w-5 text-white" />
-                    )}
-                  </div>
-                </div>
-                
-                {/* Expandable Bio Section */}
-                <div 
-                  className={`overflow-hidden smooth-transition ${
-                    expandedCard === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
-                  }`}
-                >
-                  <CardContent className="pt-6 pb-6">
-                    <p className="text-sm text-muted-foreground leading-relaxed">{member.bio}</p>
-                  </CardContent>
-                </div>
-              </Card>
-            ))}
+
+          {/* Core Leadership */}
+          <div className="max-w-6xl mx-auto mb-16">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {renderTeamCards(coreTeam, 0)}
+            </div>
+          </div>
+
+          {/* Founding Members */}
+          <div className="max-w-6xl mx-auto mb-16">
+            <h3 className="text-3xl font-bold mb-8 text-center text-primary">Founding Members</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {renderTeamCards(foundingMembers, coreTeam.length)}
+            </div>
+          </div>
+
+          {/* Co-Founders */}
+          <div className="max-w-6xl mx-auto mb-16">
+            <h3 className="text-3xl font-bold mb-8 text-center text-primary">Co-Founders</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {renderTeamCards(coFounders, coreTeam.length + foundingMembers.length)}
+            </div>
+          </div>
+
+          {/* Key Roles */}
+          <div className="max-w-6xl mx-auto mb-16">
+            <h3 className="text-3xl font-bold mb-8 text-center text-primary">Key Roles</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {renderTeamCards(keyRoles, coreTeam.length + foundingMembers.length + coFounders.length)}
+            </div>
+          </div>
+
+          {/* Active Members */}
+          <div className="max-w-6xl mx-auto">
+            <h3 className="text-3xl font-bold mb-8 text-center text-primary">Active Members</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {renderTeamCards(activeMembers, coreTeam.length + foundingMembers.length + coFounders.length + keyRoles.length)}
+            </div>
           </div>
         </div>
       </section>
