@@ -1,14 +1,32 @@
+import { useState } from "react";
 import teamNeerajImage from "@/assets/neeraj.jpg";
 import teamSantokhImage from "@/assets/santokh.jpg";
+import teamSantokh2Image from "@/assets/santokh2.jpg";
 import teamAaravImage from "@/assets/team-aarav.jpg";
 import teamPankajImage from "@/assets/team-pankaj.jpg";
 import teamVipulImage from "@/assets/team-vipul.jpg";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Award, Heart, Leaf, Sparkles, Target, Users } from "lucide-react";
+import teamSagarImage from "@/assets/sagarsonkar.jpg";
+import deepaPulsImage from "@/assets/deepakpuls.jpg";
+import deepaBishtImage from "@/assets/deepa.jpg";
+import shivaBishtImage from "@/assets/shiva.jpg";
+import jitendraMartoliyaImage from "@/assets/jitendar.jpg";
+import arjunBoharaImage from "@/assets/arjun.jpg";
+import lokeshBishtImage from "@/assets/lokesh.jpg";
+import deepakJoshiImage from "@/assets/deepakjoshi.jpg";
+import dineshPandeyImage from "@/assets/dinesh pandey.jpg";
+import abhishekTiwariImage from "@/assets/abhitiwari.jpg";
+import deepakThapaImage from "@/assets/deepakthapa.jpg";
+import deepakBishtFundImage from "@/assets/deepakbisht.jpg";
+import himanshuBishtImage from "@/assets/himanshubisht.jpg";
+import amitVidhyarthiImage from "@/assets/amitvidyarti.jpg";
+import chandarKantJoshiImage from "@/assets/chetan.jpg";
+import manojKumarImage from "@/assets/manojkumar.jpg";
+import vipulBishtImage from "@/assets/vipulbisht.jpg";
 
-//
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Award, Heart, Leaf, Sparkles, Target, Users, ChevronDown, ChevronUp } from "lucide-react";
+
 // Helper to generate simple SVG avatar data-URIs (initials) for members
-//
 const avatarSvgDataUri = (name: string, bg = "#2f8554") => {
   const initials = name
     .split(" ")
@@ -22,6 +40,12 @@ const avatarSvgDataUri = (name: string, bg = "#2f8554") => {
 };
 
 const About = () => {
+  const [expandedCard, setExpandedCard] = useState<number | null>(null);
+
+  const toggleCard = (index: number) => {
+    setExpandedCard(expandedCard === index ? null : index);
+  };
+
   const values = [
     {
       icon: Heart,
@@ -60,57 +84,136 @@ const About = () => {
       name: "Dr. Santokh Singh Bisht",
       role: "President",
       image: teamSantokhImage,
-      bio: "President Dr. Santokh Singh Bisht, a distinguished economist and social reformer, was born in the serene hills of Nainital, Uttarakhand. His early education in this picturesque town laid the foundation for his lifelong dedication to knowledge and community upliftment. From his formative years, Dr. Bisht has been passionately committed to social service and public awareness initiatives, tirelessly working to bring about positive change in society.He completed his PhD in Economics from Kumaon University, sharpening his expertise in economic policies and development strategies tailored to Uttarakhand’s unique socio-economic landscape. Today, Dr. Bisht is a renowned figure in Uttarakhand’s cultural folk activities. He has made a significant mark through numerous Uttarakhandi songs and Bollywood projects. His work and reputation have gained widespread recognition not only in Nainital but across Uttarakhand. He has connected with many people, fostering a sense of community, and has ambitious plans for the future. His visionary contributions continue to drive innovation, sustainability, and growth. With a blend of academic rigor and grassroots activism, he remains an inspiring force for progress and empowerment in the region."
+      bio: "President Dr. Santokh Singh Bisht, a distinguished economist and social reformer, was born in the serene hills of Nainital, Uttarakhand. His early education in this picturesque town laid the foundation for his lifelong dedication to knowledge and community upliftment. From his formative years, Dr. Bisht has been passionately committed to social service and public awareness initiatives, tirelessly working to bring about positive change in society. He completed his PhD in Economics from Kumaon University, sharpening his expertise in economic policies and development strategies tailored to Uttarakhand's unique socio-economic landscape. Today, Dr. Bisht is a renowned figure in Uttarakhand's cultural folk activities. He has made a significant mark through numerous Uttarakhandi songs and Bollywood projects. His work and reputation have gained widespread recognition not only in Nainital but across Uttarakhand. He has connected with many people, fostering a sense of community, and has ambitious plans for the future. His visionary contributions continue to drive innovation, sustainability, and growth. With a blend of academic rigor and grassroots activism, he remains an inspiring force for progress and empowerment in the region."
+    },
+    {
+      name: "Sagar Sonker",
+      role: "Secretary",
+      image: teamSagarImage,
+      bio: "Sagar Sonker is a dedicated secretary committed to organizational excellence and community development. His meticulous approach to administration ensures smooth operations while maintaining strong connections with community members."
+    },
+    {
+      name: "Deepak Puls",
+      role: "Vice President",
+      image: deepaPulsImage,
+      bio: "A dedicated volunteer bringing fresh perspectives and boundless energy to the Foundation's initiatives, working tirelessly for community development."
+    },
+    {
+      name: "Deepa Bisht",
+      role: "Female Vice President",
+      image: deepaBishtImage,
+      bio: "Passionate about social change and youth empowerment, Deepa actively contributes to various programs connecting tradition with modern innovation."
     },
     {
       name: "Neeraj Bisht",
       role: "Treasurer",
       image: teamNeerajImage,
-      bio: "Neeraj Bisht is a dynamic young leader whose deep roots in Nainital fuel his passionate commitment to the welfare of the hills and its people. Currently pursuing his Ph.D. in History, Neeraj’s work extends far beyond academia, actively engaging with and conducting research in the fields of tribal communities and Kumaoni ballad and folk songs.His early career was marked by exceptional distinction as an NCC cadet, where his outstanding performance led to participation in national camps and the honor of briefing high-level dignitaries, including Defence Chiefs and the Defence Minister. This experience instilled in him a mature, disciplined approach that he now applies to social work.Neeraj's vision is clear: to ensure the vibrant essence of the mountains and foundational human values remain at the forefront of every initiative. He brings a unique blend of youthful energy, disciplined leadership, and a profound commitment to his community's heritage to his role as Treasurer."
+      bio: "Neeraj Bisht is a dynamic young leader whose deep roots in Nainital fuel his passionate commitment to the welfare of the hills and its people. Currently pursuing his Ph.D. in History, Neeraj's work extends far beyond academia, actively engaging with and conducting research in the fields of tribal communities and Kumaoni ballad and folk songs. His early career was marked by exceptional distinction as an NCC cadet, where his outstanding performance led to participation in national camps and the honor of briefing high-level dignitaries, including Defence Chiefs and the Defence Minister. This experience instilled in him a mature, disciplined approach that he now applies to social work. Neeraj's vision is clear: to ensure the vibrant essence of the mountains and foundational human values remain at the forefront of every initiative. He brings a unique blend of youthful energy, disciplined leadership, and a profound commitment to his community's heritage to his role as Treasurer."
+    },
+    {
+      name: "Shiva Bisht",
+      role: "Joint Secretary",
+      image: shivaBishtImage,
+      bio: "Shiva provides the technical backbone for events and projects, contributing expertise while working behind the scenes to ensure seamless execution."
+    },
+
+    // Founding Members
+    {
+      name: "Jitendar Martoliya",
+      role: "Founding Member",
+      image: jitendraMartoliyaImage,
+      bio: "A founding pillar of Yooo Pahad Foundation, dedicated to building sustainable community initiatives from the ground up."
+    },
+
+    // Co-Founders
+    {
+      name: "Arjun Bohara",
+      role: "Co-Founder",
+      image: arjunBoharaImage,
+      bio: "Co-founder committed to grassroots development and community empowerment through innovative programs."
+    },
+    {
+      name: "Lokesh Bisht",
+      role: "Co-Founder",
+      image: lokeshBishtImage,
+      bio: "A visionary co-founder working to preserve mountain culture while driving modern development."
+    },
+    {
+      name: "Deepak Joshi",
+      role: "Co-Founder",
+      image: deepakJoshiImage,
+      bio: "Co-founder passionate about sustainable tourism and environmental conservation in the hills."
+    },
+    {
+      name: "Dinesh Pandey",
+      role: "Co-Founder",
+      image: dineshPandeyImage,
+      bio: "Dedicated co-founder focusing on youth development and skill-building initiatives."
+    },
+    {
+      name: "Abhishek Tiwari",
+      role: "Co-Founder",
+      image: abhishekTiwariImage,
+      bio: "Co-founder driving educational programs and community awareness campaigns."
+    },
+
+    // Key Roles
+    {
+      name: "Deepak Thapa",
+      role: "Head of Photography / Videography",
+      image: deepakThapaImage,
+      bio: "Capturing the essence of mountain life through powerful visual storytelling and documentation."
+    },
+    {
+      name: "Deepak Bisht",
+      role: "Fund Manager (CEO)",
+      image: deepakBishtFundImage,
+      bio: "Managing resources strategically to maximize impact and ensure sustainable growth of foundation programs."
+    },
+
+    // Active Members
+    {
+      name: "Himanshu Bisht",
+      role: "Active Member",
+      image: himanshuBishtImage,
+      bio: "An enthusiastic volunteer contributing to various community development programs."
+    },
+    {
+      name: "Amit Vidhyarthi",
+      role: "Active Member",
+      image: amitVidhyarthiImage,
+      bio: "Active member dedicated to youth engagement and cultural preservation activities."
+    },
+    {
+      name: "Chandar Kant Joshi",
+      role: "Active Member",
+      image: chandarKantJoshiImage,
+      bio: "Contributing expertise in technical support and event management for foundation initiatives."
+    },
+    {
+      name: "Manoj Kumar",
+      role: "Active Member",
+      image: manojKumarImage,
+      bio: "A dedicated member supporting grassroots initiatives and community outreach programs."
     },
     {
       name: "Aarav",
       role: "Active Member",
       image: teamAaravImage,
-      bio: "A dedicated volunteer bringing fresh perspectives and boundless energy to the Foundation's initiatives, working tirelessly for community development."
+      bio: "Bringing fresh perspectives and boundless energy to community development initiatives."
     },
     {
       name: "Vipul Bisht (Bobby)",
       role: "Active Member",
-      image: teamVipulImage,
-      bio: "Passionate about social change and youth empowerment, Vipul actively contributes to various programs connecting tradition with modern innovation."
+      image: vipulBishtImage,
+      bio: "Passionate about social change and youth empowerment, connecting tradition with modern innovation."
     },
     {
       name: "Pankaj Gadhiya",
       role: "Active Member",
       image: teamPankajImage,
-      bio: "A committed member driving grassroots initiatives and community engagement, ensuring every voice in the hills is heard and valued."
-    },
-    {
-      name: "Chetan Mehra",
-      role: "Technical Support Specialist",
-      bio: "Chetan provides the technical backbone for events and projects, contributing expertise while working behind the scenes."
-    },
-
-    // -- added generated avatars for founders / co-founders / roles / active members --
-    { name: "Jitendar Martoliya", role: "Founding Member", image: avatarSvgDataUri("Jitendar Martoliya"), bio: "" },
-    { name: "TBD", role: "Founding Member", image: avatarSvgDataUri("T B D"), bio: "" },
-    { name: "TBD", role: "Founding Member", image: avatarSvgDataUri("T B D"), bio: "" },
-
-    { name: "Arjun Bohara", role: "Co-Founder", image: avatarSvgDataUri("Arjun Bohara"), bio: "" },
-    { name: "Lokesh Bisht", role: "Co-Founder", image: avatarSvgDataUri("Lokesh Bisht"), bio: "" },
-    { name: "Deepak Joshi", role: "Co-Founder", image: avatarSvgDataUri("Deepak Joshi"), bio: "" },
-    { name: "Dinesh Pandey", role: "Co-Founder", image: avatarSvgDataUri("Dinesh Pandey"), bio: "" },
-    { name: "Abhishek Tiwari", role: "Co-Founder", image: avatarSvgDataUri("Abhishek Tiwari"), bio: "" },
-
-    { name: "Deepak Thapa", role: "Head of Photography / Videography", image: avatarSvgDataUri("Deepak Thapa"), bio: "" },
-    { name: "Deepak Bisht", role: "Fund Manager (CEO)", image: avatarSvgDataUri("Deepak Bisht"), bio: "" },
-
-    { name: "Himanshu Bisht", role: "Active Member", image: avatarSvgDataUri("Himanshu Bisht"), bio: "" },
-    { name: "Amit Vidhyarthi", role: "Active Member", image: avatarSvgDataUri("Amit Vidhyarthi"), bio: "" },
-    { name: "Chandar Kant Joshi", role: "Active Member", image: avatarSvgDataUri("Chandar Kant Joshi"), bio: "" },
-    // Pankaj / Vipul / Aarav already exist above; add Manoj
-    { name: "Manoj Kumar", role: "Active Member", image: avatarSvgDataUri("Manoj Kumar"), bio: "" }
+      bio: "A committed member driving grassroots initiatives and ensuring every voice in the hills is heard."
+    }
   ];
 
   const focusAreas = [
@@ -168,7 +271,7 @@ const About = () => {
         </div>
       </section>
 
-       {/* Team Section */}
+      {/* Team Section */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-4 text-center">Our Team</h2>
@@ -177,22 +280,41 @@ const About = () => {
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {team.map((member, index) => (
-              <Card key={index} className="hover:shadow-[var(--shadow-strong)] card-3d eco-glow smooth-transition overflow-hidden border-primary/20">
-                <div className="relative h-64 overflow-hidden">
+              <Card 
+                key={index} 
+                className="hover:shadow-[var(--shadow-strong)] card-3d eco-glow smooth-transition overflow-hidden border-primary/20 cursor-pointer"
+                onClick={() => toggleCard(index)}
+              >
+                <div className="relative h-80 overflow-hidden bg-muted/20">
                   <img 
                     src={member.image} 
                     alt={member.name} 
-                    className="w-full h-full object-cover smooth-transition hover:scale-110"
+                    className="w-full h-full object-contain smooth-transition hover:scale-105 p-2"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none"></div>
                   <div className="absolute bottom-4 left-4 right-4 text-white">
                     <h3 className="text-xl font-bold mb-1">{member.name}</h3>
                     <p className="text-sm font-semibold text-secondary">{member.role}</p>
                   </div>
+                  <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2">
+                    {expandedCard === index ? (
+                      <ChevronUp className="h-5 w-5 text-white" />
+                    ) : (
+                      <ChevronDown className="h-5 w-5 text-white" />
+                    )}
+                  </div>
                 </div>
-                <CardContent className="pt-6">
-                  <p className="text-sm text-muted-foreground leading-relaxed">{member.bio}</p>
-                </CardContent>
+                
+                {/* Expandable Bio Section */}
+                <div 
+                  className={`overflow-hidden smooth-transition ${
+                    expandedCard === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <CardContent className="pt-6 pb-6">
+                    <p className="text-sm text-muted-foreground leading-relaxed">{member.bio}</p>
+                  </CardContent>
+                </div>
               </Card>
             ))}
           </div>
