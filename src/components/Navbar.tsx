@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
+import { useState } from "react";
 import {
   Sheet,
   SheetContent,
@@ -10,6 +11,7 @@ import {
 
 const Navbar = () => {
   const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -52,7 +54,7 @@ const Navbar = () => {
           </div>
 
           <div className="md:hidden">
-            <Sheet>
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10">
                   <Menu className="h-6 w-6" />
@@ -61,7 +63,7 @@ const Navbar = () => {
               <SheetContent side="right" className="w-64">
                 <nav className="flex flex-col gap-4 mt-8">
                   {navLinks.map((link) => (
-                    <Link key={link.path} to={link.path}>
+                    <Link key={link.path} to={link.path} onClick={() => setIsOpen(false)}>
                       <Button
                         variant="ghost"
                         className={`w-full justify-start ${
@@ -72,7 +74,7 @@ const Navbar = () => {
                       </Button>
                     </Link>
                   ))}
-                  <Link to="/donations" className="mt-4">
+                  <Link to="/donations" className="mt-4" onClick={() => setIsOpen(false)}>
                     <Button variant="secondary" className="w-full">
                       Donate Now
                     </Button>
