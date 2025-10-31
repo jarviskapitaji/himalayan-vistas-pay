@@ -27,7 +27,7 @@ const Home = () => {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative min-h-[700px] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[700px] flex items-center justify-center overflow-hidden pt-24 md:pt-28">
         {/* Background Carousel */}
         <div className="absolute inset-0 w-full h-full">
           <Carousel
